@@ -27,9 +27,7 @@ type Training struct {
 // Формула расчета:
 // количество_повторов * длина_шага / м_в_км
 func (t Training) distance() float64 {
-	if t.Duration == 0 {
-		return 0
-	}
+	// удаление проверки на 0
 	return float64(t.Action) * t.LenStep / MInKm
 }
 
@@ -45,9 +43,7 @@ func (t Training) meanSpeed() float64 {
 // Calories возвращает количество потраченных килокалорий на тренировке.
 // Пока возвращаем 0, так как этот метод будет переопределяться для каждого типа тренировки.
 func (t Training) Calories() float64 {
-	if t.Duration == 0 {
-		return 0
-	}
+
 	return 0
 }
 
